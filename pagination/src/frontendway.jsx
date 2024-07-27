@@ -1,29 +1,27 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import useFetchApi from "./hooks/useFetchApi";
 
-function App() {
-  const [totalpages, setTotalPages] = useState(0);
+function FrontendWay() {
+  const [totalpages, setTotalPages] = useState(1);
   const [selectedPage, setSelectedPage] = useState(1);
   const { loading, error, data } = useFetchApi(
-    `https://dummyjson.com/product?limit=10&skip=${selectedPage*10-10}`
+    "https://dummyjson.com/product?limit=100"
   );
-  // `https://dummyjson.com/product?limit=100$skip=${setTotalPages*10-10}`   backemd driven
+  // https://dummyjson.com/product?limit=100$skip={setTotalPages*10-10}   backemd driven
 
   useEffect(() => {
     if (data&& !loading) {
-      // setTotalPages(data.products?.length);
-      console.log(data.total/10);
+      setTotalPages(data.products?.length);
 
-      setTotalPages(Math.ceil(data.total / 10));//backend driven
-     console.log(totalpages);
+      // setTotalPages(data.products?.total) //backend driven
+     
     }
 
-  }, [data, loading ]);
-  //[data, loading,selectedpage] backend driven
+  }, [data, loading ,]);
+  //[data, loading,currentPage] backend driven
 
   function pageChange(page) {
-    if (page >= 1 && page <= totalpages) setSelectedPage(page);
+    if (page >= 1 && page <= totalpages / 10) setSelectedPage(page);
   }
 
   return (
@@ -33,6 +31,7 @@ function App() {
         <>
           <div className="flex flex-row w-100 flex-wrap gap-5 ">
             {data.products
+              ?.slice(selectedPage * 10 - 10, selectedPage * 10)
               .map((data) => {
                 return (
                   <div
@@ -58,7 +57,7 @@ function App() {
             >
               👈
             </span>
-            {[...Array(totalpages )]?.map((_, i) => {
+            {[...Array(totalpages / 10)]?.map((_, i) => {
               return (
                 <span
                   key={i}
@@ -105,4 +104,4 @@ function App() {
   );
 }
 
-export default App;
+export default FrontendWay;
