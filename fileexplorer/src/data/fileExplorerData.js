@@ -12,7 +12,7 @@ const FileExplorer = {
             id:"3",
             name: "public nested 1",
             isFolder: true,
-            items: [
+            items: [ 
               {
                 id:"4",
                 name: "index.html",
