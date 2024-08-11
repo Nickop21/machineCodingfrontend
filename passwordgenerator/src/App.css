@@ -1,0 +1,57 @@
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.w-50{
+  width: 50%;
+}
+.flex-start{
+  justify-content: flex-start;
+
+}
+.gap-10{
+  gap: 10px;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.mt-50{
+  margin-top: 50px;
+}
+.mt-10{
+  margin-top: 10px;
+}
+.mb-10{
+  margin-bottom: 10px;
+}
+.passwordBox{
+  width: 500px;
+  padding: 15px;
+  background: #000;
+}
+
+.topOne{
+  height: 50px;
+}
+.topOne button{
+outline: unset;
+padding: 10px;
+background: rgb(114, 201, 230);
+color: #000;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+.topOne button:hover{
+background: rgb(82, 164, 200);
+}
+
+.characterLength input{
+  width: 100%;
+}
+
+.generatePasswordBtn{
+  text-align: center;
+ 
+}
