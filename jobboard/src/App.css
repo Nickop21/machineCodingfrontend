@@ -1,0 +1,76 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+
+}
+.text-center {
+  text-align: center;
+
+}
+.mt-10{
+  margin-top: 10px;
+}
+h1{
+  color: rgb(206, 59, 1);
+}
+/* job card */
+
+
+.job__card {
+  background-color: white;
+  box-shadow: 2px 2px #888888 ;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
+ 
+}
+.job__card a{
+ color: black;
+ text-decoration: none;
+ font-size: 25px;
+}
+.job__card a:hover{
+ color: rgb(206, 59, 1);
+
+}
+
+.job__card span {
+  font-size: 16px;
+ color: #888888;
+
+}
+.job__card span:last-child{
+margin-left: 50px;
+}
+
+.load__button{
+  padding: 10px 20px;
+  border: none;
+  background-color: rgb(206, 59, 1);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.job__card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
