@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ProgressBar from "./progressBar";
 import "./App.css";
+import Like from "./like/like";
 
 function App() {
   const [percentageval, setPercentageVal] = useState(0);
@@ -18,8 +19,9 @@ function App() {
     <>
     <div className="container">
 
-    <ProgressBar percentage={percentageval} onCompleted={()=>setcompleted(true)}/>
+    {/* <ProgressBar percentage={percentageval} onCompleted={()=>setcompleted(true)}/> */}
     <div style={{fontSize:"30px", color:"white"}}>{completed?"Completed":"Loading..."}</div>
+    <Like/>
     </div>
     </>
   );

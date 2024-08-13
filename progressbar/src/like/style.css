@@ -1,0 +1,35 @@
+.parent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(17, 16, 16);
+    cursor: pointer;
+    
+}
+.liked{
+    background: red;
+    color: white;
+    border-color: red;
+    /* transition: background 0.5s cubic-bezier(0.075, 0.82, 0.165, 1); */
+}
+.notliked{
+    background: whitesmoke;
+}
+
+
+.notliked:hover{
+    color: red;
+    border-color: red;
+}
+.notliked:hover .heart{
+    fill: red;
+
+}
+.heart,.spinner{
+    width: 30px;
+    height: 30px;
+    /* fill: grey; */
+}
